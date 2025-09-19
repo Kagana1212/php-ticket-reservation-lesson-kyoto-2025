@@ -5,6 +5,7 @@ declare(strict_types=1);
 require_once __DIR__ . "/../../app/initialize.php";
 
 use App\Models\TicketPurchase;
+
 // 認可チェック
 if (false === isset($_SESSION['admin_logged_in'])) {
     // ログイン画面へリダイレクト
@@ -22,4 +23,3 @@ echo $twig->render('admin/list.twig', [
     'list' => $list,
     'base_url' => $base_url,
 ]);
-
