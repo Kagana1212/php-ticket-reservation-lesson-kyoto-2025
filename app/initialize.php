@@ -19,3 +19,7 @@ $twig = new Environment($loader, [
 
 // タイムゾーン
 date_default_timezone_set('Asia/Tokyo');
+
+// セキュリティ用に「入れて」と言われたヘッダ
+header('X-Frame-Options: DENY');
+header('X-Content-Type-Options: nosniff');
