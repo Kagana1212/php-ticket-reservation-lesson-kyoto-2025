@@ -2,20 +2,7 @@
 
 declare(strict_types=1);
 
-use Twig\Loader\FilesystemLoader;
-use Twig\Environment;
-
-// セッション開始
-ob_start();
-session_start();
-
-// タイムゾーン
-date_default_timezone_set('Asia/Tokyo');
-
-// テンプレートエンジンを使う
-require_once __DIR__ . '/../../vendor/autoload.php';
-$loader = new FilesystemLoader(__DIR__ . '/../../views');
-$twig = new Environment($loader);
+require_once __DIR__ . "/../../app/initialize.php";
 
 // 認可チェック
 if (false === isset($_SESSION['admin_logged_in'])) {
